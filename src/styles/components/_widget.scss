@@ -1,0 +1,50 @@
+.WidgetContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  &__Bubble {
+    width: 50px;
+    height: 50px;
+    background-color: $color-primary;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: $color-background;
+  }
+
+  &__WidgetContent {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    height: 460px;
+    width: 500px;
+    border-radius: $rounded-corners;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  &__MinimizeButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-self: flex-end;
+    cursor: pointer;
+    background-color: $color-secondary;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  &__MinimizeLine {
+    height: 2px;
+    width: 60%;
+    background-color: $color-background;
+    margin: auto;
+  }
+}
