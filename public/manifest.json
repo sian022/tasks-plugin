@@ -2,9 +2,19 @@
   "manifest_version": 3,
   "name": "TaskE",
   "version": "1.0.0",
-  "action": {
-    "default_popup": "index.html",
-    "default_icon": "vite.svg"
-  },
-  "permissions": ["storage", "activeTab"]
+  "permissions": ["storage", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["index.js"],
+      "css": ["styles/main.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["index.js", "styles/main.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
