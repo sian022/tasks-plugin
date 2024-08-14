@@ -11,6 +11,12 @@ export default defineConfig({
       },
       output: {
         dir: "dist",
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith(".css")) {
+            return "assets/main.css"; // Always output as main.css
+          }
+          return "assets/[name].[ext]";
+        },
         entryFileNames: "[name].js",
       },
     },

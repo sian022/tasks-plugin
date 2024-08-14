@@ -2,18 +2,24 @@
   "manifest_version": 3,
   "name": "TaskE",
   "version": "1.0.0",
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "declarativeContent", "scripting"],
+  "action": {
+    "default_title": "TaskE"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["index.js"],
-      "css": ["styles/main.css"],
+      "js": ["main.js"],
+      "css": ["assets/main.css"],
       "run_at": "document_idle"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["index.js", "styles/main.css"],
+      "resources": ["main.js", "assets/main.css"],
       "matches": ["<all_urls>"]
     }
   ]

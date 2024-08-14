@@ -1,26 +1,33 @@
-// src/index.jsx
 import { h, render } from "preact";
 import Widget from "./components/Widget";
 import "./styles/main.scss";
 
-// Create a container for your widget
-const container = document.createElement("div");
-container.id = "widget-root";
-container.style.position = "fixed";
-container.style.bottom = "20px";
-container.style.right = "20px";
-container.style.zIndex = "1000";
-document.body.appendChild(container);
+// Create a container for your widget if it doesn't already exist
+const initializeWidget = () => {
+  if (!document.getElementById("widget-root")) {
+    const container = document.createElement("div");
+    container.id = "widget-root";
+    document.body.appendChild(container);
 
-// Render your Preact app into the container
-render(<Widget />, document.getElementById("widget-root"));
+    // Render your Preact app into the container
+    render(<Widget />, container);
+  }
+};
 
-// import { render } from "preact";
-// import "./styles/main.scss";
-// import Widget from "./components/Widget";
+function removeWidget() {
+  const widget = document.getElementById("widget-root");
+  if (widget) {
+    widget.remove();
+  }
+}
 
-// export function App() {
-//   return <Widget />;
-// }
+// Ensure widget is initialized on load
+if (document.readyState === "complete") {
+  initializeWidget();
+} else {
+  window.addEventListener("load", initializeWidget);
+}
 
-// render(<App />, document.getElementById("app"));
+// Export functions to global scope for injection
+window.initializeWidget = initializeWidget;
+window.removeWidget = removeWidget;
