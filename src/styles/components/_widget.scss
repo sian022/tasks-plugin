@@ -21,8 +21,8 @@
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    height: 460px;
-    width: 500px;
+    height: $widget-height;
+    width: $widget-width;
     border-radius: $rounded-corners;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;

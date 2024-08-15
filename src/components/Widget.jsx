@@ -1,8 +1,6 @@
 import { useState } from "preact/hooks";
-import TaskListIcon from "../assets/task-list-icon.svg";
+import TaskListIcon from "../assets/images/task-list-icon.svg";
 import MainLayout from "../layout/MainLayout";
-import Router from "preact-router";
-import Tasks from "../pages/Tasks";
 
 const Widget = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,7 +1,7 @@
 .SidebarContainer {
   height: 100%;
   background-color: $color-primary;
-  width: 80px;
+  width: $sidebar-width;
   border-top-left-radius: $rounded-corners;
   border-bottom-left-radius: $rounded-corners;
 }
@@ -12,12 +12,16 @@
   align-items: center;
   padding: 20px;
   height: 100%;
-  gap: 10px;
+  gap: 16px;
 
   &__Content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+
+  &__Item {
+    cursor: pointer;
   }
 }
