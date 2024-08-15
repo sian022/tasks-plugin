@@ -5,9 +5,9 @@ const Sidebar = ({ navigate, activePath }) => {
   return (
     <div className="SidebarContainer">
       <div className="Sidebar">
-        <div className="Sidebar__Header">
+        {/* <div className="Sidebar__Header">
           <img src={TaskListIcon} alt="icon" width="32px" />
-        </div>
+        </div> */}
 
         <div className="Sidebar__Content">
           {SIDEBAR_ITEMS.map((item) => (

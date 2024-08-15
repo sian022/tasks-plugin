@@ -1,0 +1,13 @@
+.TasksPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.TaskTabs {
+  display: flex;
+
+  &__Tab {
+    cursor: pointer;
+  }
+}
