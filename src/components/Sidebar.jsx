@@ -1,12 +1,12 @@
 import TaskListIcon from "../assets/images/task-list-icon.svg";
 import { SIDEBAR_ITEMS } from "../utils/constants";
 
-const Sidebar = ({ navigate }) => {
+const Sidebar = ({ navigate, activePath }) => {
   return (
     <div className="SidebarContainer">
       <div className="Sidebar">
         <div className="Sidebar__Header">
-          <img src={TaskListIcon} alt="icon" width="36px" />
+          <img src={TaskListIcon} alt="icon" width="32px" />
         </div>
 
         <div className="Sidebar__Content">
@@ -14,7 +14,10 @@ const Sidebar = ({ navigate }) => {
             <div
               key={item.url}
               onClick={() => navigate(item.url)}
-              className="Sidebar__Item Sidebar__Item--Active"
+              className={
+                "Sidebar__Item" +
+                (activePath === item.url ? " Sidebar__Item--Active" : "")
+              }
             >
               <img src={item.icon} alt="icon" width="28px" />
 

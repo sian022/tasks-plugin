@@ -3,6 +3,7 @@
 
 // Color Palette
 $color-primary: #e63946;
+$color-primary-active: lighten($color-primary, 10%);
 $color-secondary: #e79e99;
 $color-background: #ffe4e0;
 $color-text: #f5f5f5;

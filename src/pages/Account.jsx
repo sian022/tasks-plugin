@@ -1,5 +1,9 @@
 const Account = () => {
-  return <div>Account</div>;
+  return (
+    <div>
+      <h1 className="PageTitle">Account</h1>
+    </div>
+  );
 };
 
 export default Account;

@@ -23,7 +23,7 @@ const MainLayout = () => {
 
   return (
     <div className="MainLayout">
-      <Sidebar navigate={navigate} />
+      <Sidebar navigate={navigate} activePath={currentPath} />
 
       <div className="MainLayout__content">{renderContent()}</div>
     </div>
