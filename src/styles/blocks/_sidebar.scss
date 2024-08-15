@@ -12,7 +12,8 @@
   align-items: center;
   padding: 20px;
   height: 100%;
-  gap: 16px;
+  gap: 28px;
+  color: white;
 
   &__Content {
     display: flex;
@@ -23,5 +24,14 @@
 
   &__Item {
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+
+    &--Active {
+      background-color: $color-secondary;
+      border-radius: $rounded-corners;
+    }
   }
 }

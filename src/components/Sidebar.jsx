@@ -6,7 +6,7 @@ const Sidebar = ({ navigate }) => {
     <div className="SidebarContainer">
       <div className="Sidebar">
         <div className="Sidebar__Header">
-          <img src={TaskListIcon} alt="icon" width="32px" />
+          <img src={TaskListIcon} alt="icon" width="36px" />
         </div>
 
         <div className="Sidebar__Content">
@@ -14,8 +14,10 @@ const Sidebar = ({ navigate }) => {
             <div
               key={item.url}
               onClick={() => navigate(item.url)}
-              className="Sidebar__Item"
+              className="Sidebar__Item Sidebar__Item--Active"
             >
+              <img src={item.icon} alt="icon" width="28px" />
+
               {item.label}
             </div>
           ))}
