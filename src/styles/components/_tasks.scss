@@ -3,6 +3,7 @@
   gap: 12px;
   width: 100%;
   flex: 1;
+  overflow: auto;
 }
 
 .TaskTabs {
@@ -16,11 +17,22 @@
     padding: 4px;
     text-align: center;
     transition: background-color 0.2s, color 0.2s;
-    border: 1px solid $color-primary;
 
     &--Active {
       background-color: $color-primary;
       color: white;
+    }
+
+    &--Inactive {
+      background-color: white;
+      color: $color-primary;
+      border: 1px solid $color-primary;
+
+      &:hover {
+        background-color: $color-secondary;
+        border: 1px solid $color-secondary;
+        color: white;
+      }
     }
   }
 }
@@ -29,15 +41,50 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
-  flex: 1;
+  height: 100%;
+  overflow: auto;
+  padding: 0 1px;
 
   &__StatusSection {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    height: 100%;
+    gap: 8px;
+    position: relative;
   }
 
   &__StatusTitle {
     font-size: 1.1rem;
+    position: sticky;
+    top: -1px;
+    background-color: white;
+    font-weight: 600;
+  }
+
+  &__Tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__Task {
+    @include Card;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 16px;
+
+    &:hover {
+      background-color: $color-secondary;
+      color: white;
+    }
+  }
+
+  &__TaskTitle {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &__TaskDescription {
+    font-size: 0.8rem;
   }
 }

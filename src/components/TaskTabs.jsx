@@ -1,15 +1,15 @@
-const Tabs = ({ currentTab, onTabsChange }) => {
+const TaskTabs = ({ currentTab, onTabsChange }) => {
   const handleTabsChange = (tab) => {
     onTabsChange(tab);
   };
-
-  console.log(currentTab);
 
   return (
     <div className="TaskTabs">
       <div
         className={`TaskTabs__Tab ${
-          currentTab === "Board" ? "TaskTabs__Tab--Active" : ""
+          currentTab === "Board"
+            ? "TaskTabs__Tab--Active"
+            : "TaskTabs__Tab--Inactive"
         }`}
         onClick={() => handleTabsChange("Board")}
       >
@@ -17,7 +17,9 @@ const Tabs = ({ currentTab, onTabsChange }) => {
       </div>
       <div
         className={`TaskTabs__Tab ${
-          currentTab === "List" ? "TaskTabs__Tab--Active" : ""
+          currentTab === "List"
+            ? "TaskTabs__Tab--Active"
+            : "TaskTabs__Tab--Inactive"
         }`}
         onClick={() => handleTabsChange("List")}
       >
@@ -27,4 +29,4 @@ const Tabs = ({ currentTab, onTabsChange }) => {
   );
 };
 
-export default Tabs;
+export default TaskTabs;

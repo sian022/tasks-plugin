@@ -12,6 +12,12 @@ export const DUMMY_TASKS = {
       description: "Description 2",
       status: "To Do",
     },
+    {
+      id: 7,
+      title: "Task 7",
+      description: "Description 7",
+      status: "To Do",
+    },
   ],
   inProgress: [
     {
@@ -24,6 +30,30 @@ export const DUMMY_TASKS = {
       id: 4,
       title: "Task 4",
       description: "Description 4",
+      status: "In Progress",
+    },
+    {
+      id: 8,
+      title: "Task 8",
+      description: "Description 8",
+      status: "In Progress",
+    },
+    {
+      id: 9,
+      title: "Task 9",
+      description: "Description 9",
+      status: "In Progress",
+    },
+    {
+      id: 9,
+      title: "Task 10",
+      description: "Description 9",
+      status: "In Progress",
+    },
+    {
+      id: 9,
+      title: "Task 11",
+      description: "Description 9",
       status: "In Progress",
     },
   ],
