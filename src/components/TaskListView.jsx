@@ -1,6 +1,6 @@
 import React from "react";
 
-const TaskListView = ({ tasks = [] }) => {
+const TaskListView = ({ tasks = {} }) => {
   return <div></div>;
 };
 

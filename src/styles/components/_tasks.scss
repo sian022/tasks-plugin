@@ -1,13 +1,43 @@
 .TasksPage {
-  display: flex;
-  flex-direction: column;
+  @include FlexVertical;
+  gap: 12px;
   width: 100%;
+  flex: 1;
 }
 
 .TaskTabs {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 
   &__Tab {
     cursor: pointer;
+    border-radius: 4px;
+    padding: 4px;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+    border: 1px solid $color-primary;
+
+    &--Active {
+      background-color: $color-primary;
+      color: white;
+    }
+  }
+}
+
+.TasksBoardView {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  flex: 1;
+
+  &__StatusSection {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__StatusTitle {
+    font-size: 1.1rem;
   }
 }

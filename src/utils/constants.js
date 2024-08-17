@@ -10,3 +10,5 @@ export const SIDEBAR_ITEMS = [
     icon: "src/assets/images/account-page-icon.svg",
   },
 ];
+
+export const TASK_STATUSES = ["To Do", "In Progress", "Done"];
