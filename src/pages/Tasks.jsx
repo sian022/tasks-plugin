@@ -15,10 +15,11 @@ const Tasks = () => {
   };
 
   const onDragEnd = (result) => {
-    const { destination, source, draggableId } = result;
+    const { destination, source } = result;
 
     // If there is no destination, return
     if (!destination) {
+      console.log("No destination");
       return;
     }
 
@@ -27,8 +28,26 @@ const Tasks = () => {
       destination.droppableId === source.droppableId &&
       destination.index === source.index
     ) {
+      console.log("Same destination and source");
       return;
     }
+
+    const status = source.droppableId;
+    const sourceTasks = tasks[status];
+
+    if (!sourceTasks) {
+      console.log(`Tasks for status ${status} not found`);
+      return;
+    }
+
+    const tasksCopy = [...sourceTasks];
+    const [removedTask] = tasksCopy.splice(source.index, 1);
+    tasksCopy.splice(destination.index, 0, removedTask);
+
+    setTasks({
+      ...tasks,
+      [status]: tasksCopy,
+    });
   };
 
   return (
