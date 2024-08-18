@@ -32,22 +32,38 @@ const Tasks = () => {
       return;
     }
 
-    const status = source.droppableId;
-    const sourceTasks = tasks[status];
+    // Define source and destination statuses
+    const sourceStatus = source.droppableId;
+    const destinationStatus = destination.droppableId;
 
-    if (!sourceTasks) {
-      console.log(`Tasks for status ${status} not found`);
-      return;
+    // Handle Source Removal
+    const sourceTasks = tasks[sourceStatus];
+    const sourceTasksCopy = [...sourceTasks];
+    const [removedTask] = sourceTasksCopy.splice(source.index, 1);
+
+    // Handle Destination Insertion (if source and destination are the same)
+    if (sourceStatus === destinationStatus) {
+      sourceTasksCopy.splice(destination.index, 0, removedTask);
+
+      // Update tasks
+      setTasks({
+        ...tasks,
+        [sourceStatus]: sourceTasksCopy,
+      });
     }
+    // Handle Destination Insertion (if source and destination are different)
+    else {
+      const destinationTasks = tasks[destinationStatus];
+      const destinationTasksCopy = [...destinationTasks];
+      destinationTasksCopy.splice(destination.index, 0, removedTask);
 
-    const tasksCopy = [...sourceTasks];
-    const [removedTask] = tasksCopy.splice(source.index, 1);
-    tasksCopy.splice(destination.index, 0, removedTask);
-
-    setTasks({
-      ...tasks,
-      [status]: tasksCopy,
-    });
+      // Update tasks
+      setTasks({
+        ...tasks,
+        [sourceStatus]: sourceTasksCopy,
+        [destinationStatus]: destinationTasksCopy,
+      });
+    }
   };
 
   return (
