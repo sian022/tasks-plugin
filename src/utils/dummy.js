@@ -1,3 +1,24 @@
+// export const DUMMY_TASKS = {
+//   toDo: Array.from({ length: 100 }, (_, i) => ({
+//     id: i + 1,
+//     title: `Task ${i + 1}`,
+//     description: `Description ${i + 1}`,
+//     status: "To Do",
+//   })),
+//   inProgress: Array.from({ length: 100 }, (_, i) => ({
+//     id: i + 101,
+//     title: `Task ${i + 101}`,
+//     description: `Description ${i + 101}`,
+//     status: "In Progress",
+//   })),
+//   done: Array.from({ length: 100 }, (_, i) => ({
+//     id: i + 201,
+//     title: `Task ${i + 201}`,
+//     description: `Description ${i + 201}`,
+//     status: "Done",
+//   })),
+// };
+
 export const DUMMY_TASKS = {
   toDo: [
     {
