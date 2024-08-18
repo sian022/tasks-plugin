@@ -1,4 +1,4 @@
-import { h, render } from "preact";
+import { render } from "preact";
 import Widget from "./components/Widget";
 import "./styles/main.scss";
 

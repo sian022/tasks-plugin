@@ -45,13 +45,13 @@ export const DUMMY_TASKS = {
       status: "In Progress",
     },
     {
-      id: 9,
+      id: 10,
       title: "Task 10",
       description: "Description 9",
       status: "In Progress",
     },
     {
-      id: 9,
+      id: 11,
       title: "Task 11",
       description: "Description 9",
       status: "In Progress",

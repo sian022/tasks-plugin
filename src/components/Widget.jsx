@@ -13,7 +13,11 @@ const Widget = () => {
     <div className="WidgetContainer">
       {!isOpen && (
         <div className="WidgetContainer__Bubble" onClick={handleToggle}>
-          <img src={TaskListIcon} alt="icon" width="22px" />
+          <img
+            src={TaskListIcon}
+            alt="icon"
+            className="WidgetContainer__BubbleIcon"
+          />
         </div>
       )}
 
