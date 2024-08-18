@@ -54,7 +54,7 @@
   }
 
   &__StatusTitle {
-    font-size: $base-font-size;
+    font-size: 1em;
     position: sticky;
     top: -1px;
     background-color: white;
@@ -81,11 +81,11 @@
   }
 
   &__TaskTitle {
-    font-size: $base-font-size;
+    font-size: 1em;
     font-weight: 500;
   }
 
   &__TaskDescription {
-    font-size: $base-font-size * 0.8;
+    font-size: 0.8em;
   }
 }
